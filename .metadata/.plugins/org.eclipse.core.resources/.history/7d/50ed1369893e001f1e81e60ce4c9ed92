@@ -1,0 +1,26 @@
+package com.org.relation;
+
+public class AbstractionTest {
+
+	 public static void main(String[] args) {
+	        // Create accounts
+	        BankAccount savings = new SavingsAccount("SAV123", 1000.00);
+	        BankAccount checking = new CheckingAccount("CHK456", 500.00);
+
+	        // Display account details
+	        savings.displayAccountDetails();
+	        checking.displayAccountDetails();
+
+	        // Perform transactions
+	        savings.deposit(200.00);
+	        savings.withdraw(100.00);
+	        savings.transfer(checking, 50.00);
+
+	        checking.deposit(300.00);
+	        checking.withdraw(1000.00);
+	        checking.transfer(savings, 150.00);
+
+	        // Display account details after transactions
+	        savings.displayAccountDetails();
+	        checking.displayAccountDetails();
+	    }

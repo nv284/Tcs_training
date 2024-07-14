@@ -1,0 +1,5 @@
+package com.org.inheritance;
+
+public abstract class Bank {
+
+}

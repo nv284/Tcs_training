@@ -1,0 +1,6 @@
+package com.org.tcs1;
+
+//call by ref 
+public class College {
+
+}

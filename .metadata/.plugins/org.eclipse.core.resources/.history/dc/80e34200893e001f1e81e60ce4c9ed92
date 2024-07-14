@@ -1,0 +1,121 @@
+package com.org.relation;
+
+class MobilePhone {
+    // Private data members
+    private String model;
+    private String brand;
+    private String[] messages = new String[10];
+    private int messageCount = 0;
+    private String[] gallery = new String[10];
+    private int photoCount = 0;
+
+    // Constructor
+    public MobilePhone(String model, String brand) {
+        this.model = model;
+        this.brand = brand;
+    }
+
+    // Getter and Setter methods
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    // Method to make a call
+    public void makeCall(String phoneNumber, String string) {
+        System.out.println("Calling " + phoneNumber + "...");
+    }
+
+    // Method to receive a call
+    public void receiveCall(String callerName) {
+        System.out.println("Receiving a call from " + callerName + "...");
+    }
+
+    // Method to send a message
+    public void sendMessage(String phoneNumber, String message) {
+        System.out.println("Sending message to " + phoneNumber + ": " + message);
+        if (messageCount < messages.length) {
+            messages[messageCount++] = "To: " + phoneNumber + " - " + message;
+        } else {
+            System.out.println("Message storage full.");
+        }
+    }
+
+    // Method to read messages
+    public void readMessages() {
+        System.out.println("Reading messages...");
+        for (int i = 0; i < messageCount; i++) {
+            System.out.println(messages[i]);
+        }
+    }
+
+    // Method to click a picture
+    public void clickPicture(String photoName) {
+        System.out.println("Clicking picture: " + photoName);
+        if (photoCount < gallery.length) {
+            gallery[photoCount++] = photoName;
+        } else {
+            System.out.println("Gallery is full.");
+        }
+    }
+
+    // Method to look into the gallery
+    public void lookIntoGallery() {
+        System.out.println("Looking into gallery...");
+        for (int i = 0; i < photoCount; i++) {
+            System.out.println(gallery[i]);
+        }
+    }
+
+class MobilePhone {
+    // Existing code...
+
+    // Overloaded method to make a call with additional info
+    public void makeCall(String phoneNumber, String callerName) {
+        System.out.println("Calling " + phoneNumber + " from " + callerName + "...");
+    }
+
+    // Overloaded method to send a message with timestamp
+    public void sendMessage(String phoneNumber, String message, String timestamp) {
+        System.out.println("Sending message to " + phoneNumber + ": " + message + " at " + timestamp);
+        if (messageCount < messages.length) {
+            messages[messageCount++] = "To: " + phoneNumber + " - " + message + " at " + timestamp;
+        } else {
+            System.out.println("Message storage full.");
+        }
+    }
+}
+public class EncapsulationTest {
+	public static void main(String[] args) {
+        // Create a MobilePhone object
+        MobilePhone myPhone = new MobilePhone("Galaxy S21", "Samsung");
+
+        // Test encapsulation
+        System.out.println("Model: " + myPhone.getModel());
+        System.out.println("Brand: " + myPhone.getBrand());
+
+        // Test functionality
+        myPhone.makeCall("123-456-7890");
+        myPhone.receiveCall("Alice");
+        myPhone.sendMessage("123-456-7890", "Hello, how are you?");
+        myPhone.readMessages();
+        myPhone.clickPicture("Beach_Sunset");
+        myPhone.lookIntoGallery();
+
+        // Test static polymorphism
+        myPhone.makeCall("123-456-7890", "Bob");
+        myPhone.sendMessage("123-456-7890", "Meeting at 5 PM", "12:30 PM");
+    }
+}
+}

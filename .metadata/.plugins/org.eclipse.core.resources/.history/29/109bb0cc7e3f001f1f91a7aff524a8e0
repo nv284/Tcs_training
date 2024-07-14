@@ -1,0 +1,10 @@
+package com.org.exception;
+
+public class ServiceExceptionA extends Exception {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 996349412239210197L;
+
+}

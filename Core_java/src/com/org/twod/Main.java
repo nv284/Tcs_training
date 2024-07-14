@@ -1,0 +1,79 @@
+package com.org.twod;
+
+import java.util.Scanner;
+
+public class Main {
+
+	  public static void main(String[] args) {
+	        Scanner scanner = new Scanner(System.in);
+	        ProductManager productManager = new ProductManager(5);
+	        CartManager cartManager = new CartManager(3, 5); // 3 customers, 5 products per cart
+	        DeliveryManager deliveryManager = new DeliveryManager();
+
+	        // Adding products
+	        productManager.addProduct("Laptop", 1000);
+	        productManager.addProduct("Phone", 500);
+	        productManager.addProduct("Tablet", 300);
+
+	        boolean exit = false;
+	        while (!exit) {
+	            System.out.println("\n1. Display Products\n2. Add to Cart\n3. View Cart\n4. Purchase\n5. Deliver\n6. Exit");
+	            int choice = scanner.nextInt();
+	            switch (choice) {
+	                case 1:
+	                    productManager.displayProducts();
+	                    break;
+	                case 2:
+	                    System.out.print("Enter customer ID (0-2): ");
+	                    int customerId = scanner.nextInt();
+	                    productManager.displayProducts();
+	                    System.out.print("Enter product number to add: ");
+	                    int productNumber = scanner.nextInt();
+	                    Product product = productManager.getProduct(productNumber - 1);
+	                    if (product != null) {
+	                        cartManager.addToCart(customerId, product);
+	                    } else {
+	                        System.out.println("Invalid product number.");
+	                    }
+	                    break;
+	                case 3:
+	                    System.out.print("Enter customer ID (0-2): ");
+	                    customerId = scanner.nextInt();
+	                    cartManager.displayCart(customerId);
+	                    break;
+	                case 4:
+	                    System.out.print("Enter customer ID (0-2): ");
+	                    customerId = scanner.nextInt();
+	                    double total = cartManager.purchase(customerId);
+	                    System.out.println("Total purchase amount: $" + total);
+	                    break;
+	                case 5:
+	                    System.out.print("Enter customer ID (0-2): ");
+	                    customerId = scanner.nextInt();
+	                    scanner.nextLine(); // Consume newline
+	                    System.out.print("Enter customer name: ");
+	                    String customerName = scanner.nextLine();
+	                    System.out.print("Enter address: ");
+	                    String address = scanner.nextLine();
+	                    cartManager.displayCart(customerId);
+	                    Product[] purchasedProducts = cartManager.cart.carts[customerId];
+	                    for (Product p : purchasedProducts) {
+	                        if (p != null) {
+	                            deliveryManager.deliverProduct(p, customerName, address);
+	                        }
+	                    }
+	                    break;
+	                case 6:
+	                    exit = true;
+	                    break;
+	                default:
+	                    System.out.println("Invalid choice. Please try again.");
+	            }
+	        }
+	        scanner.close();
+	    }
+	}
+	
+
+
+

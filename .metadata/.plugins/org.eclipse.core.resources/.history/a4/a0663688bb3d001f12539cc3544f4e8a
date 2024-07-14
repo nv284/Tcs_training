@@ -1,0 +1,9 @@
+package com.org.oned;
+
+public class Address {
+	  String street;
+	    String city;
+	    String postalCode;
+
+	    
+}

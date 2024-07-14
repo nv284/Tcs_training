@@ -1,0 +1,26 @@
+package com.org.java8;
+
+@FunctionalInterface
+interface MyName{  
+    public void SayMyName();  
+}  
+
+
+public class LambdaExpressionExample {  
+    public static void main(String[] args) {  
+        
+  
+        //without lambda, MyName implementation
+        // using anonymous class
+        
+        MyName person = new MyName(){  
+            @Override // is an optional keyword in this case
+            
+            public void SayMyName(){
+            System.out.println("Himanshu");
+            }  
+        };  
+        person.SayMyName();  
+    }  
+}  
+  

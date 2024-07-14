@@ -1,0 +1,21 @@
+package com.org.tcs1;
+
+class Demo{
+	private int accountNo;
+	public int balance;
+	int transection;
+}
+
+
+public class AccessDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Demo d = new Demo ();
+		//d.accountNo;
+		d.balance;
+		d.transection;
+	}
+
+}

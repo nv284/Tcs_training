@@ -1,0 +1,20 @@
+package com.org.java8;
+
+interface MyInter1 {
+
+    public String greet(String s);
+
+}
+
+public class LambdaExpressionExample6 {
+	
+	public static void main(String[] args) {  
+        String s1 = "Hello";
+      MyInter1 g1 = (str) ->{
+            return s1+", "+str;
+           };
+     
+     System.out.println(g1.greet("Himanshu")); 
+  }  
+
+}

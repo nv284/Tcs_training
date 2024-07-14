@@ -1,0 +1,23 @@
+package com.org.oned;
+
+public class Product {
+	String name;
+    int quantity;
+
+    Product(String name, int quantity) {
+        this.name = name;
+        this.quantity = quantity;
+    }
+}
+
+class Address {
+    String street;
+    String city;
+    String postalCode;
+
+    Address(String street, String city, String postalCode) {
+        this.street = street;
+        this.city = city;
+        this.postalCode = postalCode;
+    }
+}

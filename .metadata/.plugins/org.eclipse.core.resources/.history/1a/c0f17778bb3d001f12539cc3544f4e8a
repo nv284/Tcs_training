@@ -1,0 +1,10 @@
+package com.org.oned;
+
+public class Main {
+	blic static void main(String[] args) {
+        DeliveryManager manager = new DeliveryManager(5);
+
+        // Adding deliveries
+        manager.addDelivery(new Product("Laptop", 1), new Address("123 Main St", "Springfield", "12345"));
+        manager.addDelivery(new Product("Phone", 2), new Address("456 Elm St", "Shelbyville", "67890"));
+}

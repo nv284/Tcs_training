@@ -1,0 +1,14 @@
+package com.org.java8;
+
+interface speaker {
+	  public String say();
+	}
+	public class LambdaExpressionExample1 {
+	  public static void main(String[] args) {
+	    speaker s = () -> {
+	      return "Scaler has best content.";
+	    };
+	    System.out.println(s.say());
+	  }
+	}  
+

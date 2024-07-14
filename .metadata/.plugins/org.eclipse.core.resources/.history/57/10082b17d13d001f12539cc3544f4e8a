@@ -1,0 +1,21 @@
+package com.org.tcs1;
+
+package methodOverloading; 
+public class Addition { 
+void add(int x, int y) 
+{ 
+    int sum = x + y; 
+    System.out.println("Sum of two numbers: " +sum); 
+} 
+void add(int x, int y, int z) 
+{ 
+    int sum = x + y + z; 
+    System.out.println("Sum of three numbers: " +sum); 
+} 
+public static void main(String[] args) 
+{ 
+    Addition a = new Addition(); 
+    a.add(10, 20); // Calling add() method by passing two argument values. 
+    a.add(20, 30, 40); // Calling add() method by passing three argument values. 
+ } 
+}

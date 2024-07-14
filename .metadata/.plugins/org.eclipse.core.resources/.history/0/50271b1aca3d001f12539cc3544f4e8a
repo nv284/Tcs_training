@@ -1,0 +1,9 @@
+package com.org.twod;
+
+Product[][] carts;
+int[] cartSizes;
+
+Cart(int numberOfCustomers, int cartSize) {
+    carts = new Product[numberOfCustomers][cartSize];
+    cartSizes = new int[numberOfCustomers];
+}

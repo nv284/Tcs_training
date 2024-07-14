@@ -1,0 +1,39 @@
+package com.org.java8;
+
+interface MyInter{  
+    int add(int a,int b);  
+}  
+
+interface speaker {
+	  public String say();
+	}
+	public class LambdaExpressionExample1 {
+	  public static void main(String[] args) {
+	    speaker s = () -> {
+	      return "Scaler has best content.";
+	    };
+	    System.out.println(s.say());
+	    
+	    
+        MyInter ad1 = (a,b) -> (a+b);  
+        
+        System.out.println(ad1.add(100,200));
+        
+ MyInter ad2 = (int a,int b) -> (a+b);  
+        
+        System.out.println(ad2.add(200,300));
+        
+        
+        
+        //another way 
+        MyInter ad11 = (a,b) -> (a+b);
+        System.out.println(ad11.add(100,20));  
+        
+        MyInter ad21 = (int a,int b) -> {  
+            return (a+b);   
+           }; 
+           
+System.out.println(ad21.add(100,200)); 
+	  }
+	}  
+

@@ -1,0 +1,11 @@
+package com.org.tcs.day1;
+
+public class NewDemo extends Demo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+      NewDemo d1 = new NewDemo();
+      d1.
+	}
+
+}
