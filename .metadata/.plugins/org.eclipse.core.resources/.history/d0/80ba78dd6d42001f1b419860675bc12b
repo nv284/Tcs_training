@@ -1,0 +1,8 @@
+package com.org.collection;
+
+public interface ItemManagement {
+    void addItem(Item item);
+    void removeItem(int itemId);
+    void updateItem(Item item);
+    void listItems();
+}

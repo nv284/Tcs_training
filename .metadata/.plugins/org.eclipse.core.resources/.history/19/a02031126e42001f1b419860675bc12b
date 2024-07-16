@@ -1,0 +1,21 @@
+package com.org.collection.model;
+
+import java.sql.Connection;
+import java.util.LinkedList;
+
+class StoreManagement implements ItemManagement {
+    private LinkedList<Item> items;
+    private Connection connection;
+
+    public StoreManagement() {
+        items = new LinkedList<>();
+        connectToDatabase();
+    }
+
+    private void connectToDatabase() {
+        try {
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/testdb", "root", "pass");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
