@@ -1,0 +1,10 @@
+table - 
+
+  CREATE TABLE items (
+    id INT PRIMARY KEY,
+    name VARCHAR(255),
+    quantity INT,
+    price DOUBLE
+);
+
+
