@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+	id="WebApp_ID" version="4.0">
+	<display-name>web_demo_servlet</display-name>
+
+	<servlet>
+		<servlet-name>demo1</servlet-name>
+		<servlet-class>com.forword.RequestDispatcherDemo</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>demo12</servlet-name>
+		<servlet-class>com.forword.RequestDisDemoPart2</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>demo1</servlet-name>
+		<url-pattern>/display</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>demo12</servlet-name>
+		<url-pattern>/display1</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>HelloServlet</servlet-name>
+		<servlet-class>com.filter.HelloServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>HelloServlet</servlet-name>
+		<url-pattern>/servlet1</url-pattern>
+	</servlet-mapping>
+	<filter>
+		<filter-name>f1</filter-name>
+		<filter-class>com.filter.MyFilter</filter-class>
+		<init-param>
+			<param-name>construction</param-name>
+			<param-value>no</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>f1</filter-name>
+		<url-pattern>/servlet1</url-pattern>
+	</filter-mapping>
+
+
+
+ <filter>
+        <filter-name>Filter1</filter-name>
+        <filter-class>com.filter.MyFilter1</filter-class>
+        <init-param>
+            <param-name>username</param-name>
+            <param-value>scott</param-value>
+        </init-param>
+        <init-param>
+            <param-name>password</param-name>
+            <param-value>tiger</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>Filter1</filter-name>
+        <url-pattern>/MyServ</url-pattern>
+    </filter-mapping>
+    <servlet>
+        <servlet-name>Servlet</servlet-name>
+        <servlet-class>com.filter.MyServlet11</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet</servlet-name>
+        <url-pattern>/MyServ</url-pattern>
+    </servlet-mapping>
+</web-app>
